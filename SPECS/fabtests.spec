@@ -1,6 +1,6 @@
 Name:           fabtests
-Version:        1.17.0
-Release:        2%{?dist}
+Version:        1.18.0
+Release:        1%{?dist}.1
 Summary:        Test suite for libfabric API
 # include/jsmn.h and common/jsmn.c are licensed under MIT.
 # All other source files permit distribution under BSD. Some of them
@@ -42,6 +42,15 @@ rm -f %{buildroot}%{_libdir}/*.la
 %license COPYING
 
 %changelog
+* Tue Jul 11 2023 Kamal Heib <kheib@redhat.com> - 1.18.0-1.1
+- Rebuilt for fixing tag.
+- Resolves: rhbz#2214187
+
+* Mon Jun 12 2023 Kamal Heib <kheib@redhat.com> - 1.18.0-1
+- Update to upstream release 1.18.0
+- Add gating tests
+- Resolves: rhbz#2214187
+
 * Wed Feb 08 2023 Michal Schmidt <mschmidt@redhat.com> - 1.17.0-2
 - Update to upstream release 1.17.0
 - Require python3-pytest
