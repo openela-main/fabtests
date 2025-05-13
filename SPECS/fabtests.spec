@@ -1,5 +1,5 @@
 Name:           fabtests
-Version:        1.18.0
+Version:        1.22.0
 Release:        1%{?dist}
 Summary:        Test suite for libfabric API
 # include/jsmn.h and common/jsmn.c are licensed under MIT.
@@ -42,6 +42,10 @@ rm -f %{buildroot}%{_libdir}/*.la
 %license COPYING
 
 %changelog
+* Mon Nov 11 2024 Kamal Heib <kheib@redhat.com> - 1.22.0-1
+- Update to upstream release 1.22.0
+- Resolves: RHEL-67059
+
 * Mon Jun 12 2023 Kamal Heib <kheib@redhat.com> - 1.18.0-1
 - Update to upstream release 1.18.0
 - Resolves: rhbz#2214181
