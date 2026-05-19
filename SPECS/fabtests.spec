@@ -1,6 +1,6 @@
 Name:           fabtests
-Version:        2.1.0
-Release:        1%{?dist}
+Version:        2.3.1
+Release:        3%{?dist}
 Summary:        Test suite for libfabric API
 # include/jsmn.h and common/jsmn.c are licensed under MIT.
 # All other source files permit distribution under BSD. Some of them
@@ -9,7 +9,6 @@ Summary:        Test suite for libfabric API
 License:        BSD and (BSD or GPLv2) and MIT
 Url:            https://github.com/ofiwg/libfabric
 Source:         https://github.com/ofiwg/libfabric/releases/download/v%{version}/%{name}-%{version}.tar.bz2
-Patch0:         0001-adjust-shebang-lines-in-rft_yaml_to_junit_xml-and-ru.patch
 BuildRequires:  libfabric-devel >= %{version}
 BuildRequires:  valgrind-devel
 BuildRequires:  gcc
@@ -22,7 +21,6 @@ fabric software library.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p2
 
 %build
 %configure --with-valgrind
@@ -42,6 +40,18 @@ rm -f %{buildroot}%{_libdir}/*.la
 %license COPYING
 
 %changelog
+* Wed Feb 18 2026 Kamal Heib <kheib@redhat.com> - 2.3.1-3
+- Rebuilt after updating libfabric
+- Resolves: RHEL-134211
+
+* Wed Dec 17 2025 Kamal Heib <kheib@redhat.com> - 2.3.1-2
+- bump release to rebuild in sidetag
+- Resolves: RHEL-134211
+
+* Thu Dec 11 2025 Kamal Heib <kheib@redhat.com> - 2.3.1-1
+- Update to upstream release 2.3.1
+- Resolves: RHEL-134211
+
 * Wed Jul 16 2025 Kamal Heib <kheib@redhat.com> - 2.1.0-1
 - Update to upstream release 2.1.0
 - Resolves: RHEL-104032
